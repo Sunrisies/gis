@@ -1,0 +1,8 @@
+node_modules/
+dist/
+tiles/
+.DS_Store
+*.log
+
+# WASM 构建产物（体积大，可重新构建）
+src/wasm/pkg/
