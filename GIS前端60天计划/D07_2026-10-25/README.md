@@ -20,7 +20,22 @@
 4. 用 `ogrinfo -al -so in.shp` 查看原始坐标系，和转换后对比
 5. 截图三张：QGIS 坐标系信息 / ogrinfo 输出 / 转换后的 GeoJSON 在 geojson.io 里的显示
 
-### 今天要用的数据（三条任选）
+> 📦 **数据已下载好**：见 [`data/数据使用说明.md`](../../data/数据使用说明.md)（含按天对照表）
+
+### 今天用这份（**已下载好，重点用第一个**）
+
+```bash
+cd data/raw
+ls natural_earth/ne_110m_admin_0_countries/
+```
+**`ne_110m_admin_0_countries.prj` 就是你要在 QGIS 里核对的东西**，内容：
+```
+GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",...]]
+```
+即 EPSG:4326。今天要做的就是：**在 QGIS 里验证这一点，再用 ogr2ogr 转成 4490 对比**。
+
+<details><summary>备用数据源（点开看）</summary>
+
 
 **① Natural Earth shp**（**最贴合今天任务：它真的是 shp 格式，能练坐标系确认**）
 - https://www.naturalearthdata.com/downloads/ → `Large scale (1:10m)` → `Cultural` → `Admin 0 – Countries`
@@ -44,6 +59,8 @@ viewer.imageryLayers.addImageryProvider(
 ```
 
 > 更多数据源见 [`公开数据下载清单.md`](../../公开数据下载清单.md)
+
+</details>
 
 ## 二、产出（必须留下，否则等于没做）
 

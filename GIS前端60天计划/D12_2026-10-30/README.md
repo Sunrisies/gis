@@ -31,7 +31,23 @@
 
 </details>
 
+> 📦 **样例瓦片已下载好**：`data/raw/3d-tiles-samples/`，详见 [`data/数据使用说明.md`](../../data/数据使用说明.md)
+
 ## 二、今日任务（按顺序做）
+
+### 今天加载这个（已下载好）
+```bash
+cd data/raw && python3 -m http.server 8080
+# 浏览器验证 http://localhost:8080/3d-tiles-samples/TilesetWithDiscreteLOD/tileset.json
+```
+```js
+const tileset = await Cesium.Cesium3DTileset.fromUrl(
+  'http://localhost:8080/3d-tiles-samples/TilesetWithDiscreteLOD/tileset.json'
+)
+viewer.scene.primitives.add(tileset)
+viewer.zoomTo(tileset)
+```
+⚠️ **必须走 http，不能 `file://`**（CORS 会拦死，这是最高频的坑）
 
 1. 在 Mac 上装 nginx（或写一个极简 Node 静态服务）
 2. 把 Windows 切好的 3D Tiles 拷过来，用本地服务发布

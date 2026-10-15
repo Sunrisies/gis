@@ -9,7 +9,19 @@
 
 ---
 
-## 一、先下数据（从这三条里选一条，不要都下）
+> 📦 **数据已下载好**：见 [`data/数据使用说明.md`](../../data/数据使用说明.md)
+
+## 一、先看数据（**已下载好，不用再下**）
+
+```bash
+cd data/raw
+ls 3d-tiles-samples/ *.las
+```
+- `3d-tiles-samples/` —— 官方样例瓦片（10 个 tileset，含 b3dm / pnts）
+- `*.las` —— 4 个真实激光点云（**这就是你 D14 要切的原始数据**）
+
+<details><summary>如果还想下别的数据（点开看）</summary>
+
 
 ### 路线 A：官方示例瓦片（**最省事，推荐先用它跑通**）
 
@@ -42,8 +54,9 @@ git clone https://github.com/PDAL/data.git
 - 地址：https://github.com/PDAL/data
 - **用途**：用 `py3dtiles` 把 LAS 切成 `pnts`，这是**你自己产出的第一份 3D Tiles**
 
-> 更多数据源（DEM / 影像 / 行政区划）见 [`公开数据下载清单.md`](../../公开数据下载清单.md)，
-> 每个环节都给了 3 条以上可下载路径。
+> 更多数据源（DEM / 影像）见 [`公开数据下载清单.md`](../../公开数据下载清单.md)。
+
+</details>
 
 ---
 

@@ -31,7 +31,18 @@
 
 </details>
 
+> 📦 **样例瓦片已下载好**：`data/raw/3d-tiles-samples/`，详见 [`data/数据使用说明.md`](../../data/数据使用说明.md)
+
 ## 二、今日任务（按顺序做）
+
+### 今天用这个（已下载好，含三级 LOD）
+```
+1.0/TilesetWithDiscreteLOD/
+├── dragon_low.b3dm      44K   ← 最远时用
+├── dragon_medium.b3dm  264K   ← 中距离
+└── dragon_high.b3dm    4.3M   ← 最近时用
+```
+**这三个文件就是 LOD**。把相机拉远拉近，或用 `viewer.zoomTo(tileset)`，看 Network 面板里哪个 b3dm 被请求——**这就是 `geometricError` 在起作用**。
 
 1. 理解瓦片是怎么按需加载的：相机距离 → geometricError → 加载哪一级
 2. 理解「屏幕空间误差」（SSE）这个概念

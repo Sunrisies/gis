@@ -13,7 +13,19 @@
 3. 拿一份公开数据实际跑一遍转换
 4. 整理成 `docs/工具命令速查.md`
 
-### 先下数据（三条任选，**推荐第一条**）
+> 📦 **数据已下载好**：见 [`data/数据使用说明.md`](../../data/数据使用说明.md)（含按天对照表）
+
+### 今天用这份（**已下载好，直接用**）
+
+```bash
+cd data/raw
+ls china.json natural_earth/
+```
+- `china.json` —— 中国 35 个省级边界（GeoJSON）
+- `natural_earth/ne_110m_admin_0_countries/` —— **真 shp 格式**，有配套 `.prj`，最适合练转换
+
+<details><summary>如果需要别的数据（点开看备用源）</summary>
+
 
 **① 阿里云 DataV 行政区划**（免注册、直连、无需 key）
 ```bash
@@ -36,6 +48,8 @@ curl -o zhejiang.json "https://geo.datav.aliyun.com/areas_v3/bound/330000_full.j
   ```
 
 > 更多数据源见 [`公开数据下载清单.md`](../../公开数据下载清单.md)
+
+</details>
 
 ## 二、产出（必须留下，否则等于没做）
 

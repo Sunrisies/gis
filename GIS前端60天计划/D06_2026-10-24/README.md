@@ -12,7 +12,9 @@
 2. 理解 3D Tiles / GLTF / GLB / Draco 各自解决什么问题
 3. 拿你的数据集实测：同一份数据转成 GeoJSON 和 TopoJSON，体积差多少
 
-**用这份数据做对比**（免注册，已下过就直接用）：
+> 📦 **数据已下载好**：见 [`data/数据使用说明.md`](../../data/数据使用说明.md)（含按天对照表）
+
+**用这份数据做对比**（已下载好）：
 ```bash
 curl -o data/raw/china.json "https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json"
 ls -lh data/raw/china.json                      # 看 GeoJSON 原始体积

@@ -32,11 +32,13 @@
 
 ## 二、今日任务（按顺序做）
 
-**先拿到数据**（用昨天下的 `china.json` 即可；没有就现在下）：
+> 📦 **数据已下载好**：见 [`data/数据使用说明.md`](../../data/数据使用说明.md)（含按天对照表）
+
+**今天用这份**（已下载好）：
 ```bash
-curl -o data/raw/china.json "https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json"
+cd data/raw && ls china.json province_330000.json
 ```
-备选：https://www.naturalearthdata.com/downloads/ 下 shp 也适合 QGIS 练手。
+把 `china.json` 直接拖进 QGIS 即可。想练多图层叠加就再加 `province_330000.json`（浙江，含 11 个地市）。
 
 1. QGIS 界面：图层树、属性表、坐标系指示器
 2. 实操：打开数据 → 确认坐标系 → 查看属性表 → 导出 GeoJSON

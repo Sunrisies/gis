@@ -1,5 +1,4 @@
-# 数据文件（体积大，用公开数据下载清单.md 里的命令自行获取）
-data/raw/
+# 切片产物：几十万个小文件，绝对不能提交
 data/tiles/
 data/processed/
 
