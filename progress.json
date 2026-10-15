@@ -1,0 +1,87 @@
+{
+  "_说明": "进度状态文件。每天结束更新 current_day 与 completed_days。新会话读这个就知道到哪了。",
+  "_更新方法": "把 current_day 改成下一个要做的天数，并把刚做完的天数加进 completed_days",
+
+  "plan": {
+    "name": "GIS 前端 63 天计划",
+    "start_date": "2026-10-19",
+    "end_date": "2026-12-20",
+    "total_days": 63,
+    "goal": "掌握 GIS 前端：Vue3 + Cesium + 地图性能优化 + Rust/WASM",
+    "deliverable": "可公网访问的「三维城市态势平台」"
+  },
+
+  "current_day": 2,
+  "current_date": "2026-10-20",
+  "completed_days": [1],
+
+  "next_task": {
+    "day": 2,
+    "theme": "GDAL / ogr2ogr 命令基础",
+    "readme": "GIS前端60天计划/D02_2026-10-20/README.md",
+    "prerequisite": "brew install gdal"
+  },
+
+  "milestones": [
+    { "id": "M0", "name": "数据与工具",   "days": "D1-D7",   "dates": "10-19~10-25", "status": "in_progress" },
+    { "id": "M1", "name": "切片与链路",   "days": "D8-D14",  "dates": "10-26~11-01", "status": "not_started" },
+    { "id": "M2", "name": "页面与交互",   "days": "D15-D28", "dates": "11-02~11-15", "status": "not_started" },
+    { "id": "M3", "name": "性能基线",     "days": "D29-D42", "dates": "11-16~11-29", "status": "not_started" },
+    { "id": "M4", "name": "选型对比",     "days": "D43-D49", "dates": "11-30~12-06", "status": "not_started" },
+    { "id": "M5", "name": "Rust/WASM",    "days": "D50-D56", "dates": "12-07~12-13", "status": "not_started" },
+    { "id": "M6", "name": "包装交付",     "days": "D57-D63", "dates": "12-14~12-20", "status": "not_started" }
+  ],
+
+  "environment": {
+    "node": "v24.18.0",
+    "npm": "11.16.0",
+    "python": "3.12.14",
+    "rust": "1.97.1",
+    "homebrew": "6.0.22",
+    "gdal": "NOT_INSTALLED",
+    "qgis": "NOT_INSTALLED",
+    "wasm_pack": "NOT_INSTALLED"
+  },
+
+  "decisions": [
+    "切片用开源方案 fanvanzh/3dtiles + py3dtiles，不用 CesiumLab（闭源、参数不透明）",
+    "切片全程 Mac 可做，不依赖 Windows",
+    "性能测试用固定种子的合成数据，保证可复现",
+    "算法只用 JS，只做简单和中等，同一题做 3 遍",
+    "进度落后不补，从当天继续"
+  ],
+
+  "data": {
+    "location": "data/raw/",
+    "size": "36MB / 64 files",
+    "available": [
+      "矢量：中国省级边界 GeoJSON、Natural Earth shp（含 .prj）",
+      "三维：3D Tiles 官方样例 10 个 tileset（含三级 LOD）",
+      "点云：4 个真实 LAS 文件",
+      "合成：points-100k.json（10 万点）、track-100k.json（10 万带时间戳点）"
+    ],
+    "missing": ["卫星影像", "DEM 高程"],
+    "missing_note": "用户明确说后面自己下载，不要催",
+    "serve_command": "cd data/raw && python3 -m http.server 8080",
+    "note": "3D Tiles 必须走 HTTP，不能 file://"
+  },
+
+  "reference_files": {
+    "总表": "GIS前端60天计划/总表.md",
+    "数据按天对照": "data/数据使用说明.md",
+    "视频优先资料": "GIS前端学习资料清单.md",
+    "Cesium原理": "GIS前端深度原理与技术要点.md",
+    "GDAL工具链": "GIS数据处理与工具链-学习资料清单.md",
+    "数据下载": "公开数据下载清单.md",
+    "算法VueWASM": "算法Vue3-RustWASM资料详解.md",
+    "项目本体": "city-situation-platform/"
+  },
+
+  "project_status": {
+    "skeleton": "done",
+    "readme": "done",
+    "docs_01_04": "done",
+    "code": "none_yet",
+    "note": "前端代码要到 M2（D15+）才开始写"
+  }
+}
